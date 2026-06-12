@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* variables & reset */
 :root {
-    --color-background: #f0f0f0;
     --color-background: #f0f0f0;
     --color-text: #333;
     --color-border: #ccc;
@@ -12,17 +13,28 @@
     --color-social-hover: #f0f0f0;
     --color-floating-label: #5f6368;
     --color-white: #fff;
+    
+    /* Repeated design values */
+    --border-radius-small: 6px;
+    --border-radius-medium: 8px;
+    --control-height: 48px;
+    --font-size-title: 32px;
+    --font-size-normal: 16px;
+    --font-size-small: 14px;
+    --font-size-xs: 12px;
+    --transition-fast: all 0.3s ease;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'DM sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
+/* body & container */
 body {
-    background-image: url('../../img/backgroundlogin-2.jpg');
+    background-image: url('../img/backgroundlogin-2.jpg');
     background-color: var(--color-background);
     color: var(--color-text);
     background-size: cover;
@@ -38,13 +50,14 @@ body {
     padding: 20px;
 }
 
+/* form container */
 .form-container {
     position: relative;
     background-color: var(--color-white);
     padding: 50px 40px;
     width: 100%;
     max-width: 450px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-medium);
     border: 1px solid var(--color-border);
     overflow: hidden;
 }
@@ -54,12 +67,12 @@ body {
     z-index: 1;
 }
 
-.form-header p {
-    color: var(--color-placeholder);
+.form-header h1 {
+    font-size: var(--font-size-title);
 }
 
-.form-header h1 {
-    font-size: 32px;
+.form-header p {
+    color: var(--color-placeholder);
 }
 
 .form-box {
@@ -69,23 +82,39 @@ body {
     margin-top: 50px;
 }
 
+/* input group & labels */
 .input-group {
     position: relative;
     display: flex;
 }
 
 .input-field {
-    height: 48px;
+    height: var(--control-height);
     padding-inline: 14px;
     border: 1px solid var(--color-border);
-    border-radius: 6px;
+    border-radius: var(--border-radius-small);
     width: 100%;
     outline: none;
+}
+
+.input-field::placeholder {
+    color: transparent;
+    transition: color 0.2s ease;
+}
+
+.input-field:focus::placeholder {
+    color: var(--color-placeholder);
+    opacity: 0.6;
+}
+
+.input-field:focus {
+    border-color: var(--color-primary);
 }
 
 #password {
     padding-right: 30px;
 }
+
 .floating-label {
     position: absolute;
     top: 50%;
@@ -94,7 +123,7 @@ body {
     color: var(--color-placeholder);
     background-color: var(--color-white);
     padding-inline: 6px;
-    transition: all 0.3s ease;
+    transition: var(--transition-fast);
     pointer-events: none;
 }
 
@@ -103,20 +132,13 @@ body {
     top: 0;
     left: 8px;
     transform: translateY(-50%);
-    font-size: 12px;
+    font-size: var(--font-size-xs);
     color: var(--color-primary);
-}
-
-.input-field:focus {
-    border-color: var(--color-primary);
 }
 
 .input-field:not(:focus):not(:placeholder-shown) ~ .floating-label {
     color: var(--color-floating-label);
 }
-/* .blob-image {
-    display: none;
-} */
 
 .eye-icon {
     position: absolute;
@@ -125,6 +147,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .eye-icon svg {
     width: 20px;
     height: 20px;
@@ -136,7 +159,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    font-size: 14px;
+    font-size: var(--font-size-small);
 }
 
 .remember-me {
@@ -145,15 +168,16 @@ body {
     gap: 5px;
 }
 
+/* buttons & link */
 .form-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    height: 48px;
+    height: var(--control-height);
     background: none;
     border: none;
-    border-radius: 6px;
+    border-radius: var(--border-radius-small);
     cursor: pointer;
     padding-inline: 8px;
 }
@@ -161,11 +185,12 @@ body {
 .form-btn--submit {
     background-color: var(--color-primary);
     color: var(--color-white);
-    font-size: 16px;
+    font-size: var(--font-size-normal);
     font-weight: 600;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: var(--transition-fast);
 }
+
 .form-btn--submit:hover {
     background-color: var(--color-primary-hover);
 }
@@ -183,18 +208,19 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: 14px;
+    font-size: var(--font-size-small);
     color: var(--color-placeholder);
     margin-top: 20px;
 }
 
-.form-divider:before,
+.form-divider::before,
 .form-divider::after {
     content: '';
     flex: 1;
     height: 1px;
     background-color: var(--color-divider);
 }
+
 .form-socials {
     width: 100%;
     display: grid;
@@ -203,9 +229,8 @@ body {
 }
 
 .form-btn--social {
-    /* border: 1px solid var(--color-divider);
-    transition: 0.3 ease; */
-    border: none;
+    border: 1px solid var(--color-divider);
+    transition: var(--transition-fast);
     background: transparent;
 }
 
@@ -221,10 +246,11 @@ body {
     color: var(--color-link);
 }
 
-.form--link:hover {
-    text-decoration: none;
+.form-link:hover {
+    text-decoration: underline;
 }
 
+/* blobs & animations */
 .form-blob {
     position: absolute;
     width: 200px;
@@ -245,19 +271,21 @@ body {
 .blob-image--1 {
     top: -170px;
     right: -150px;
-    animation: welcomeIn 1.2s ease-out 0.3 forwards;
+    animation: welcomeIn 1.2s ease-out 0.3s forwards;
     --final-opacity: 1;
 }
+
 .blob-image--2 {
     top: -165px;
     right: -150px;
-    animation: welcomeIn 1.2s ease-out 0.3 forwards;
+    animation: welcomeIn 1.2s ease-out 0.3s forwards;
     --final-opacity: 0.6;
 }
+
 .blob-image--3 {
     top: -160px;
     right: -150px;
-    animation: welcomeIn 1.2s ease-out 0.3 forwards;
+    animation: welcomeIn 1.2s ease-out 0.3s forwards;
     --final-opacity: 0.3;
 }
 
@@ -270,14 +298,14 @@ body {
         opacity: calc(var(--final-opacity) * 0.8);
         transform: scale(1.1) translateX(-10px) rotate(200deg);
     }
-
     100% {
         opacity: calc(var(--final-opacity));
         transform: scale(1) translateX(0px) rotate(205deg);
     }
 }
 
-@media (max-widtd: 480px) {
+/* responsive */
+@media (max-width: 480px) {
     .form-container {
         padding: 60px 30px;
     }

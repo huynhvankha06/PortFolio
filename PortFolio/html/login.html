@@ -4,29 +4,30 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Login Form || Portfolio</title>
-        <link rel="stylesheet" href="/PortFolio/css/login.css" />
+        <link rel="stylesheet" href="../css/login.css" />
     </head>
     <body>
         <div class="container">
             <div class="form-container">
+                <input type="checkbox" id="toggle-form" hidden />
                 <div class="form-blob">
-                    <img src="/img/blob.svg" alt="blob" class="blob-image blob-image--1" />
-                    <img src="/img/blob.svg" alt="blob" class="blob-image blob-image--2" />
-                    <img src="/img/blob.svg" alt="blob" class="blob-image blob-image--3" />
+                    <img src="../img/blob.svg" alt="blob" class="blob-image blob-image--1" />
+                    <img src="../img/blob.svg" alt="blob" class="blob-image blob-image--2" />
+                    <img src="../img/blob.svg" alt="blob" class="blob-image blob-image--3" />
                 </div>
 
                 <div class="form-header">
-                    <p>Please enter your details</p>
-                    <h1>Welcome Back</h1>
+                    <h1>Đăng nhập</h1>
+                    <p>Chào mừng trở lại! Vui lòng nhập thông tin của bạn.</p>
                 </div>
-                <form class="form-box">
+                <form class="form-box" action="admin.html">
                     <div class="input-group">
-                        <input type="email" id="email" class="input-field" placeholder="" required />
-                        <label for="email" class="floating-label">Email address</label>
+                        <input type="email" id="email" class="input-field" placeholder="example@gmail.com" required />
+                        <label for="email" class="floating-label">Email</label>
                     </div>
                     <div class="input-group">
                         <input type="password" id="password" class="input-field" placeholder="" required />
-                        <label for="password" class="floating-label">Password</label>
+                        <label for="password" class="floating-label">Mật khẩu</label>
                         <div class="eye-icon">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -48,30 +49,31 @@
                     <div class="input-group checkbox-group">
                         <div class="form-col remember-me">
                             <input type="checkbox" id="remember-me-checkbox" class="checkbox-field" />
-                            <label for="remember-me-checkbox">Remember me</label>
+                            <label for="remember-me-checkbox">Ghi nhớ đăng nhập</label>
                         </div>
                         <div class="form-col">
-                            <a href="#" class="form-link">Forgot password?</a>
+                            <a href="#" class="form-link">Quên mật khẩu?</a>
                         </div>
                     </div>
-                    <button type="submit" class="form-btn form-btn--submit">Sign In</button>
+                    <button type="submit" class="form-btn form-btn--submit">Đăng nhập</button>
                 </form>
                 <div class="form-divider">
-                    <p>Or</p>
+                    <p>Hoặc</p>
                 </div>
                 <div class="form-bottom">
                     <div class="form-socials">
                         <button class="form-btn form-btn--social">
-                            <img src="/img/google.svg" alt="social icon" class="btn-icon" />
+                            <img src="../img/google.svg" alt="social icon" class="btn-icon" />
                         </button>
                         <button class="form-btn form-btn--social">
-                            <img src="/img/facebook.svg" alt="social icon" class="btn-icon" />
+                            <img src="../img/facebook.svg" alt="social icon" class="btn-icon" />
                         </button>
                         <button class="form-btn form-btn--social">
-                            <img src="/img/apple.svg" alt="social icon" class="btn-icon" />
+                            <img src="../img/apple.svg" alt="social icon" class="btn-icon" />
                         </button>
                     </div>
-                    <p>Don't have an account? <a class="form-link" href="#">Sign up</a></p>
+                    <p>Chỉ dành cho quản trị viên.</p>
+                    <a href="homepage.html" class="back-home">Quay lại Portfolio </a>
                 </div>
             </div>
         </div>

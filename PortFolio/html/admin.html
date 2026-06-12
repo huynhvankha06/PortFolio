@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard - Portfolio Management</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/admin.css">
+    </head>
+
+    <body>
+        <input type="radio" name="admin-tab" id="tab-overview" checked hidden>
+        <input type="radio" name="admin-tab" id="tab-profile" hidden>
+        <input type="radio" name="admin-tab" id="tab-skills" hidden>
+        <input type="radio" name="admin-tab" id="tab-projects" hidden>
+        <input type="radio" name="admin-tab" id="tab-messages" hidden>
+
+        <div class="admin-layout">
+            <aside class="admin-sidebar">
+                <div class="sidebar-logo">
+                    <img src="../img/logoImage.png" alt="Kane Logo" class="logo-img">
+                    <h2>Kane</h2>
+                </div>
+
+                <nav class="sidebar-menu">
+                    <label for="tab-overview" class="menu-item" id="nav-overview"><i class="bx bx-layout"></i><span class="menu-text">Overview</span></label>
+                    <label for="tab-profile" class="menu-item" id="nav-profile"><i class="bx bx-id-card"></i><span class="menu-text">Edit Profile</span></label>
+                    <label for="tab-skills" class="menu-item" id="nav-skills"><i class="bx bx-brain"></i><span class="menu-text">Manage Skills</span></label>
+                    <label for="tab-projects" class="menu-item" id="nav-projects"><i class="bx bx-layer"></i><span class="menu-text">Manage Projects</span></label>
+                    <label for="tab-messages" class="menu-item" id="nav-messages"><i class="bx bx-message-square-detail"></i><span class="menu-text">Messages Inbox</span><span class="badge badge-danger" style="display: none;">0</span></label>
+                </nav>
+            </aside>
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <h1 class="page-title">
+                        <span class="title-overview">Dashboard Overview</span>
+                        <span class="title-profile">Edit Profile</span>
+                        <span class="title-skills">Manage Skills</span>
+                        <span class="title-projects">Manage Projects</span>
+                        <span class="title-messages">Messages Inbox</span>
+                    </h1>
+                    <p class="breadcrumbs">Admin &gt; <span></span></p>
+                </div>
+
+                <div class="header-right">
+                    <div class="notification-bell">
+                        <i class="bx bx-bell"></i>
+                        <span class="notification-badge"></span>
+                    </div>
+                    <a href="homepage.html" class="btn-view-site">
+                        <i class="bx bx-link-external"></i>
+                        <span>View Site</span>
+                    </a>
+                    <div class="header-profile">
+                        <img src="../img/image.png" alt="Admin Avatar" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Huỳnh Văn Khá</h4>
+                            <p>Backend Developer</p>
+                        </div>
+                        <a href="homepage.html" class="logout-btn" title="Sign Out">
+                            <i class="bx bx-power-off"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area-->
+            <main class="admin-main">
+                <!-- OVERVIEW TAB -->
+                <section class="tab-pane overview-pane">
+                    <!-- Stats Row (Grid) -->
+                    <div class="stats-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-icon kpi-icon-views">
+                                <i class="bx bx-line-chart"></i>
+                            </div>
+                            <div class="kpi-data">
+                                <h3>0</h3>
+                                <p>Total Views</p>
+                                <span class="kpi-trend kpi-trend-neutral"><i class="bx bx-minus"></i> No traffic yet</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon kpi-icon-projects">
+                                <i class="bx bx-folder-open"></i>
+                            </div>
+                            <div class="kpi-data">
+                                <h3>1</h3>
+                                <p>Active Projects</p>
+                                <span class="kpi-trend kpi-trend-neutral"><i class="bx bx-minus"></i> Stable</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon kpi-icon-skills">
+                                <i class="bx bx-code-curly"></i>
+                            </div>
+                            <div class="kpi-data">
+                                <h3>7</h3>
+                                <p>Skills Registered</p>
+                                <span class="kpi-trend kpi-trend-positive"><i class="bx bx-plus"></i> Added Express.js</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon kpi-icon-messages">
+                                <i class="bx bx-envelope"></i>
+                            </div>
+                            <div class="kpi-data">
+                                <h3>0</h3>
+                                <p>Unread Messages</p>
+                                <span class="kpi-trend kpi-trend-neutral"><i class="bx bx-minus"></i> No new messages</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Overview Grid-->
+                    <div class="content-split-grid">
+                        <!-- Graph Card (Flexbox) -->
+                        <div class="panel-card chart-card">
+                            <div class="panel-header">
+                                <h3>Weekly Profile Views (Traffic)</h3>
+                                <div class="card-actions">
+                                    <span class="chart-legend-wrapper"><span class="legend-indicator legend-indicator-views"></span> Views</span>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="chart-bar-container">
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Mon"><span>0</span></div>
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Tue"><span>0</span></div>
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Wed"><span>0</span></div>
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Thu"><span>0</span></div>
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Fri"><span>0</span></div>
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Sat"><span>0</span></div>
+                                    <div class="chart-bar-column" style="--val: 0%;" data-day="Sun"><span>0</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activities Card -->
+                        <div class="panel-card activity-card">
+                            <div class="panel-header">
+                                <h3>Recent Actions</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="activity-list">
+                                    <li class="activity-item">
+                                        <div class="activity-icon icon-blue"><i class="bx bx-plus-circle"></i></div>
+                                        <div class="activity-details">
+                                            <p>Created Project: <strong>Online Course Management System</strong></p>
+                                            <span>Published</span>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-icon icon-green"><i class="bx bx-check-circle"></i></div>
+                                        <div class="activity-details">
+                                            <p>Added Skill: <strong>Node.js</strong> (Languages)</p>
+                                            <span>Verified</span>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-icon icon-purple"><i class="bx bx-check-circle"></i></div>
+                                        <div class="activity-details">
+                                            <p>Added Skill: <strong>Express.js</strong> (Framework)</p>
+                                            <span>Verified</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--EDIT PROFILE TAB -->
+                <section class="tab-pane profile-pane">
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Personal Identification Details</h3>
+                            <p>Change how your personal card is presented on the client homepage.</p>
+                        </div>
+                        <div class="panel-body">
+                            <form class="admin-form" action="">
+                                <div class="form-grid">
+                                    <div class="form-group avatar-upload-group">
+                                        <label>Avatar Preview</label>
+                                        <div class="avatar-preview-box">
+                                            <img src="../img/image.png" alt="Profile image">
+                                            <div class="avatar-overlay">
+                                                <i class="bx bx-camera"></i>
+                                                <input type="file" id="avatar-input" hidden>
+                                                <label for="avatar-input">Upload New</label>
+                                            </div>
+                                        </div>
+                                        <p class="input-tip">Recommended: JPG/PNG, 500x500px square format.</p>
+                                    </div>
+
+                                    <div class="form-group-group">
+                                        <div class="form-group">
+                                            <label for="profile-name">Full Name</label>
+                                            <input type="text" id="profile-name" value="Huỳnh Văn Khá" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profile-title">Headline</label>
+                                            <input type="text" id="profile-title" value="Information Technology Student"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profile-sub-title">Major / Subheading</label>
+                                            <input type="text" id="profile-sub-title" value="Backend Developer (Node.js)"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="profile-bio">Bio Description</label>
+                                    <textarea id="profile-bio" rows="6" required>An Information Technology student highly focused on Backend Development with Node.js and database management systems. I have a strong passion for system requirement analysis, ERD design, and query optimization. Throughout my academic journey, I have focused on building practical applications, such as a Student and Sales Management System using Node.js, Express, and T-SQL, while leveraging Docker to containerize and streamline deployment environments.</textarea>
+                                </div>
+                                <h3 class="form-section-title">Contact & Social Links</h3>
+                                <div class="form-grid-three">
+                                    <div class="form-group">
+                                        <label for="social-fb"><i class="bx bxl-facebook-circle"></i> Facebook</label>
+                                        <input type="url" id="social-fb" value="https://facebook.com/huynhvankha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="social-ln"><i class="bx bxl-linkedin-square"></i> LinkedIn</label>
+                                        <input type="url" id="social-ln" value="https://linkedin.com/in/huynhvankha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="social-git"><i class="bx bxl-github"></i> GitHub</label>
+                                        <input type="url" id="social-git" value="https://github.com/huynhvankha06">
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary"><i class="bx bx-save"></i> Save
+                                        Changes</button>
+                                    <button type="reset" class="btn-secondary">Reset Fields</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!--  MANAGE SKILLS TAB -->
+                <section class="tab-pane skills-pane">
+                    <div class="content-split-grid">
+                        <!-- Add/Edit Skill Form -->
+                        <div class="panel-card">
+                            <div class="panel-header">
+                                <h3>Register New Skill</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="admin-form" action="">
+                                    <div class="form-group">
+                                        <label for="skill-name">Skill Name</label>
+                                        <input type="text" id="skill-name" placeholder="e.g. Docker, PostgreSQL" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="skill-category">Category Group</label>
+                                        <select id="skill-category" required>
+                                            <option value="Languages">Languages</option>
+                                            <option value="Framework">Framework</option>
+                                            <option value="Database">Database</option>
+                                            <option value="Tools & APIs">Tools & APIs</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="skill-level">Proficiency Level (0% - 100%)</label>
+                                        <div class="range-slider-container">
+                                            <input type="range" id="skill-level" min="10" max="100" value="80" step="5">
+                                            <span class="range-value">80%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn-primary"><i class="bx bx-plus"></i> Add Skill</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!--Current Registered Skills list -->
+                        <div class="panel-card">
+                            <div class="panel-header">
+                                <h3>Current Registered Skills</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="skills-manager-list">
+                                    <!-- Languages -->
+                                    <div class="skill-category-group">
+                                        <h4>Languages</h4>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">JavaScript</span>
+                                                <span class="skill-pct">70%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 70%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">Node.js</span>
+                                                <span class="skill-pct">65%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 65%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Frameworks -->
+                                    <div class="skill-category-group">
+                                        <h4>Frameworks</h4>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">Express.js</span>
+                                                <span class="skill-pct">65%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 65%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Databases -->
+                                    <div class="skill-category-group">
+                                        <h4>Databases</h4>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">MySQL</span>
+                                                <span class="skill-pct">75%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 75%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">MongoDB</span>
+                                                <span class="skill-pct">60%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 60%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Tools & APIs -->
+                                    <div class="skill-category-group">
+                                        <h4>Tools & APIs</h4>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">Git & GitHub</span>
+                                                <span class="skill-pct">75%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 75%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-manager-item">
+                                            <div class="skill-meta">
+                                                <span class="skill-title">HTML & CSS</span>
+                                                <span class="skill-pct">70%</span>
+                                            </div>
+                                            <div class="skill-control-row">
+                                                <div class="skill-bar-preview"><span style="width: 70%"></span></div>
+                                                <div class="item-actions">
+                                                    <button class="btn-icon-only edit-btn" title="Edit"><i class="bx bx-edit-alt"></i></button>
+                                                    <button class="btn-icon-only delete-btn" title="Delete"><i class="bx bx-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MANAGE PROJECTS TAB -->
+                <section class="tab-pane projects-pane">
+                    <!-- Project Management Header -->
+                    <div class="section-actions-bar">
+                        <h3>Registered Portfolio Projects</h3>
+                        <input type="checkbox" id="toggle-add-project" class="hidden-toggle" hidden>
+                        <label for="toggle-add-project" class="btn-primary"><i class="bx bx-plus"></i> Add Project</label>
+
+                        <div class="sliding-form-wrapper">
+                            <div class="panel-card form-slide-card">
+                                <div class="panel-header">
+                                    <h3>Add Portfolio Project</h3>
+                                    <label for="toggle-add-project" class="close-form-btn"><i class="bx bx-x"></i></label>
+                                </div>
+                                <div class="panel-body">
+                                    <form class="admin-form" action="">
+                                        <div class="form-grid">
+                                            <div class="form-group">
+                                                <label for="project-form-title">Project Title</label>
+                                                <input type="text" id="project-form-title" placeholder="e.g. Course Management System" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-form-num">Order / Number</label>
+                                                <input type="text" id="project-form-num" placeholder="e.g. 02 — Personal Project" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-grid">
+                                            <div class="form-group">
+                                                <label for="project-form-date">Project Duration</label>
+                                                <input type="text" id="project-form-date" placeholder="e.g. Jan 2026 - Present" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-form-tech">Technologies Stack (Comma separated)</label>
+                                                <input type="text" id="project-form-tech" placeholder="e.g. Node.js, Express, MongoDB" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="project-form-desc">Project Description</label>
+                                            <textarea id="project-form-desc" rows="4" placeholder="Brief explanation of the project duties and tech stack achievements." required></textarea>
+                                        </div>
+
+                                        <div class="form-grid">
+                                            <div class="form-group">
+                                                <label for="project-form-demo">Demo URL</label>
+                                                <input type="url" id="project-form-demo" placeholder="https://demo.example.com">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-form-git">Repository URL</label>
+                                                <input type="url" id="project-form-git" placeholder="https://github.com/...">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn-primary"><i class="bx bx-save"></i> Save Project</button>
+                                            <label for="toggle-add-project" class="btn-secondary">Cancel</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Display Grid -->
+                    <div class="admin-projects-grid">
+                        <div class="admin-project-card card-featured">
+                            <div class="card-tag">Featured</div>
+                            <span class="project-num">Jan 2026 - Present | 01 — Personal Project</span>
+                            <h4 class="project-title">Online Course Management System</h4>
+                            <p class="project-desc">Conducted system requirement analysis and designed a flexible NoSQL data
+                                structure for an online learning platform. Developed robust RESTful APIs to handle course
+                                lifecycles, instructor access control, and student learning progress tracking.</p>
+                            <div class="tech-pills">
+                                <span class="pill">JavaScript</span>
+                                <span class="pill">Node.js</span>
+                                <span class="pill">Express.js</span>
+                                <span class="pill">MongoDB</span>
+                            </div>
+                            <div class="project-row-actions">
+                                <a href="#" class="btn-action-text text-blue"><i class="bx bx-edit"></i> Edit</a>
+                                <a href="#" class="btn-action-text text-yellow"><i class="bx bx-show-slash"></i> Hide</a>
+                                <a href="#" class="btn-action-text text-red"><i class="bx bx-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                </section>
+
+                <!--MESSAGES TAB -->
+                <section class="tab-pane messages-pane">
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Messages Received from Contact Form</h3>
+                            <p>Total: 0 messages</p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="messages-table-wrapper">
+                                <table class="messages-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Sender Name</th>
+                                            <th>Contact Info</th>
+                                            <th>Subject & Message Snippet</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="6"
+                                                style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
+                                                <div class="empty-state-inbox">
+                                                    <i class="bx bx-message-square-detail"
+                                                        style="font-size: 50px; color: var(--primary-color); opacity: 0.4; margin-bottom: 15px; display: block;"></i>
+                                                    <strong
+                                                        style="color: var(--text-light); font-size: var(--font-size-title);">No
+                                                        messages received yet</strong>
+                                                    <p
+                                                        style="font-size: var(--font-size-normal); margin-top: 6px; opacity: 0.85;">
+                                                        Contact submissions from the homepage will appear here in your
+                                                        inbox.</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
